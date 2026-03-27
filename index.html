@@ -1,0 +1,365 @@
+<style>
+  .tritones-landing,
+  .tritones-landing * {
+    box-sizing: border-box;
+  }
+
+  .tritones-landing {
+    --bg: #071421;
+    --card: rgba(9, 26, 43, 0.84);
+    --line: rgba(255, 255, 255, 0.12);
+    --text: #eff8ff;
+    --muted: #bdd1e2;
+    --ink: #0e2740;
+    --white: #ffffff;
+    --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    margin: 0 auto !important;
+    padding: 0 0 44px !important;
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    color: var(--text) !important;
+    background:
+      radial-gradient(circle at top, rgba(47, 207, 255, 0.18), transparent 26%),
+      linear-gradient(180deg, #0a1826 0%, #07111b 58%, #040b12 100%) !important;
+    border-radius: 0 !important;
+    overflow: hidden;
+  }
+
+  .tritones-landing a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .tritones-landing img {
+    display: block !important;
+    max-width: 100% !important;
+    border: 0 !important;
+  }
+
+  .tritones-shell {
+    width: min(1120px, calc(100% - 32px)) !important;
+    margin: 0 auto !important;
+  }
+
+  .tritones-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-bottom: 1px solid rgba(14, 39, 64, 0.1);
+    backdrop-filter: blur(16px);
+  }
+
+  .tritones-topbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    padding: 14px 0 !important;
+  }
+
+  .tritones-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  .tritones-brand img {
+    width: 140px !important;
+    height: auto !important;
+  }
+
+  .tritones-brand-copy {
+    display: grid !important;
+    gap: 3px !important;
+  }
+
+  .tritones-brand-copy strong {
+    color: var(--ink) !important;
+    font-size: 14px !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+  }
+
+  .tritones-brand-copy span,
+  .tritones-top-contact,
+  .tritones-top-contact a {
+    color: #4f6780 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  .tritones-top-contact {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+  }
+
+  .tritones-pill {
+    padding: 10px 14px !important;
+    border-radius: 999px !important;
+    background: #f5f8fb !important;
+    border: 1px solid rgba(14, 39, 64, 0.08) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  .tritones-pill-whatsapp {
+    background: #25d366 !important;
+    border-color: #25d366 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+
+  .tritones-hero {
+    padding: 60px 0 36px !important;
+  }
+
+  .tritones-hero-grid {
+    display: grid !important;
+    gap: 28px !important;
+    align-items: stretch !important;
+  }
+
+  .tritones-hero-copy {
+    display: grid !important;
+    gap: 18px !important;
+    align-content: center !important;
+  }
+
+  .tritones-landing h1,
+  .tritones-landing h2,
+  .tritones-landing p {
+    margin: 0 !important;
+  }
+
+  .tritones-landing .tritones-hero-copy h1 {
+    font-size: clamp(38px, 6.8vw, 82px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.05em !important;
+    text-transform: uppercase !important;
+    color: var(--white) !important;
+    font-weight: 800 !important;
+  }
+
+  .tritones-hero-copy p {
+    max-width: 680px !important;
+    color: var(--muted) !important;
+    line-height: 1.8 !important;
+    font-size: 17px !important;
+  }
+
+  .tritones-hero-actions,
+  .tritones-detail-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    padding-top: 6px !important;
+  }
+
+  .tritones-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    padding: 12px 20px !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .tritones-button:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .tritones-button-primary {
+    color: #062033 !important;
+    background: linear-gradient(135deg, #8aecff 0%, #41d8ff 100%) !important;
+    box-shadow: 0 18px 40px rgba(57, 212, 255, 0.25) !important;
+  }
+
+  .tritones-button-secondary {
+    border: 1px solid var(--line) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text) !important;
+  }
+
+  .tritones-hero-card,
+  .tritones-detail-card {
+    border: 1px solid var(--line) !important;
+    border-radius: 28px !important;
+    background: var(--card) !important;
+    box-shadow: var(--shadow) !important;
+    overflow: hidden !important;
+  }
+
+  .tritones-hero-card img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+    object-fit: cover !important;
+  }
+
+  .tritones-section {
+    padding: 0 0 72px !important;
+  }
+
+  .tritones-detail-card {
+    display: grid !important;
+    gap: 18px !important;
+    padding: 24px !important;
+  }
+
+  .tritones-detail-card h2 {
+    font-size: clamp(28px, 4vw, 44px) !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    color: var(--white) !important;
+    margin: 0 !important;
+  }
+
+  .tritones-meta {
+    display: grid !important;
+    gap: 12px !important;
+  }
+
+  .tritones-meta div {
+    padding: 14px 16px !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid var(--line) !important;
+    color: var(--muted) !important;
+    line-height: 1.7 !important;
+  }
+
+  .tritones-meta strong {
+    color: var(--white) !important;
+  }
+
+  .tritones-detail-note {
+    color: var(--muted) !important;
+    line-height: 1.8 !important;
+  }
+
+  .tritones-footer {
+    padding: 0 0 44px !important;
+  }
+
+  .tritones-footer-box {
+    display: grid !important;
+    gap: 10px !important;
+    padding: 22px !important;
+    border-radius: 22px !important;
+    border: 1px solid var(--line) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    text-align: center !important;
+    color: var(--muted) !important;
+  }
+
+  .tritones-footer-box strong {
+    color: var(--white) !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+  }
+
+  .tritones-footer-link {
+    color: #8aecff !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+  }
+
+  @media (min-width: 860px) {
+    .tritones-hero-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 859px) {
+    .tritones-topbar-inner {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+
+    .tritones-top-contact {
+      justify-content: flex-start !important;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .tritones-hero {
+      padding-top: 42px !important;
+    }
+
+    .tritones-hero-card img {
+      min-height: 300px !important;
+    }
+  }
+</style>
+
+<div class="tritones-landing">
+  <header class="tritones-topbar">
+    <div class="tritones-shell tritones-topbar-inner">
+      <a class="tritones-brand" href="#inicio">
+        <img src="https://drive.google.com/thumbnail?id=1z4FYH5yw9OLvQkTKnVp29bFh1IPXckvP&amp;sz=w1000" alt="Tritones Buceo">
+        <div class="tritones-brand-copy">
+          <strong>Tritones Buceo</strong>
+          <span>Escuela y comunidad del mar</span>
+        </div>
+      </a>
+      <div class="tritones-top-contact">
+        <div class="tritones-pill">Medellín, Colombia</div>
+        <a class="tritones-pill tritones-pill-whatsapp" href="https://wa.me/573117717360" target="_blank" rel="noreferrer">Contacto por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="tritones-hero">
+      <div class="tritones-shell tritones-hero-grid">
+        <div class="tritones-hero-copy">
+          <p>Una conversación con María Claudia Díaz Granados y Juan Restrepo sobre ríos, manglares, océanos y las decisiones que nos conectan.</p>
+          <h1>Próximas actividades</h1>
+          <div class="tritones-hero-actions">
+            <a class="tritones-button tritones-button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=El+Patio+Km+2+v%C3%ADa+Las+Palmas,+Medell%C3%ADn" target="_blank" rel="noreferrer">Ver ubicación en Google Maps</a>
+            <a class="tritones-button tritones-button-secondary" href="https://www.instagram.com/tritonesbuceo/" target="_blank" rel="noreferrer">Ir a Instagram</a>
+          </div>
+        </div>
+        <div class="tritones-hero-card">
+          <img src="https://drive.google.com/thumbnail?id=14sMjW64UhIXkeN0kZriUOe8xC2CqgGM0&amp;sz=w1600" alt="Actividades de marzo 2026 en Tritones Buceo">
+        </div>
+      </div>
+    </section>
+
+    <section class="tritones-section">
+      <div class="tritones-shell">
+        <article class="tritones-detail-card">
+          <h2>Noche de Buzos</h2>
+          <div class="tritones-meta">
+            <div><strong>Hora de encuentro:</strong> 7:30 PM</div>
+            <div><strong>Entrada:</strong> libre con reserva previa</div>
+            <div><strong>Reservas:</strong> 604 581 1488 / 313 402 4447</div>
+            <div><strong>Lugar:</strong> El Patio, Km 2 vía Las Palmas, Medellín</div>
+          </div>
+          <p class="tritones-detail-note">Un espacio para reunir amigos del mar, compartir experiencias y seguir conversando sobre buceo, territorio, ríos, manglares y océanos.</p>
+          <div class="tritones-detail-actions">
+            <a class="tritones-button tritones-button-primary" href="https://www.instagram.com/tritonesbuceo/" target="_blank" rel="noreferrer">Ver más en Instagram</a>
+            <a class="tritones-button tritones-button-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=El+Patio+Km+2+v%C3%ADa+Las+Palmas,+Medell%C3%ADn" target="_blank" rel="noreferrer">Cómo llegar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tritones-footer">
+    <div class="tritones-shell">
+      <div class="tritones-footer-box">
+        <strong>Tritones Buceo</strong>
+        <span>Sigue la programación y las próximas actividades en Instagram.</span>
+        <span><strong>Nuestra sede:</strong> <a class="tritones-footer-link" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+1+Sur+%2332-93,+Loma+de+los+Parras,+arriba+de+la+Transversal+Intermedia,+Medell%C3%ADn" target="_blank" rel="noreferrer">Calle 1 Sur #32 -93, Loma de los Parras, arriba de la Transversal Intermedia</a></span>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Temp files
+*.tmp
+*.bak
+*~
+
+# Local screenshots / ad hoc captures
+tritones/Screenshot From *.png
+
+# Optional: keep local backups out of git if desired
+# version_*/
