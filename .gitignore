@@ -14,3 +14,6 @@ tritones/Screenshot From *.png
 
 # Optional: keep local backups out of git if desired
 # version_*/
+
+# Archivos descargados de Instagram (pesados, no son código del proyecto)
+noche_de_buzos_posters/Instagram_files/
