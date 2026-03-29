@@ -33,3 +33,12 @@ Pendiente: seguir construyendo las demás secciones del sitio.
 - `noche_de_buzos_posters/Instagram_files/` está en `.gitignore` (archivos pesados de Instagram, no son código)
 - Las versiones en carpetas son snapshots manuales; el historial real está en git
 - SSH key del ThinkPad ya está agregada a GitHub (cuenta: manolosuarezv)
+
+## Acceso al RAID desde el ThinkPad
+- **En casa**: se monta automáticamente vía CIFS desde `//192.168.1.69/raid/proyectos_web` al arrancar
+- **Fuera de casa**: usar Tailscale IP `100.119.118.124` — el montaje automático falla porque el fstab tiene la IP local
+  - Montaje manual fuera de casa:
+    ```bash
+    sudo mount -t cifs //100.119.118.124/raid/proyectos_web /mnt/raid -o credentials=/etc/credentials_server01,uid=1000,gid=1000,iocharset=utf8
+    ```
+- **Pendiente**: crear script que detecte si está en casa o fuera y monte con la IP correcta automáticamente
